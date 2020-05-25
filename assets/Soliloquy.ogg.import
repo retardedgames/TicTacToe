@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Soliloquy.ogg-4c916c8232ede7afe560537146eb7ed2.oggstr"
+
+[deps]
+
+source_file="res://assets/Soliloquy.ogg"
+dest_files=[ "res://.import/Soliloquy.ogg-4c916c8232ede7afe560537146eb7ed2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
