@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/metall005-new-tileable.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/blank.png" type="Texture" id=3]
+[ext_resource path="res://assets/Soliloquy.ogg" type="AudioStream" id=4]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,13 +31,28 @@ position = Vector2( 45, 45 )
 texture = ExtResource( 3 )
 
 [node name="ResetButton" type="Button" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 60.0
-margin_bottom = 30.0
+margin_left = 952.0
+margin_top = 570.0
+margin_right = 1002.0
+margin_bottom = 590.0
 text = "Reset"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 30.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 [connection signal="draw" from="." to="." method="_on_GameScene_draw"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

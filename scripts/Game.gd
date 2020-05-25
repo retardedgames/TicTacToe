@@ -33,7 +33,6 @@ func _on_GameScene_draw():
 func draw_game():
 	for i in range(size):
 		for j in range(size):
-			print("draw",i,j)
 			draw_rect(grid[i][j].rect,Color("#ffffff"),false)
 			grid[i][j].val=-1
 			var p:Panel = get_node("Panel").duplicate()
@@ -48,10 +47,8 @@ func _on_doit(event,i,j):
 		if event.button_index==BUTTON_LEFT and event.pressed==true: 
 			var p:Panel = get_node("tile"+str(i)+str(j))
 			p.disconnect("gui_input",self,"_on_doit")
-			print(("x" if player_x == true else "o"))
 			var s:Sprite = p.get_child(0)
 			s.set_texture((tex_x if player_x==true else tex_o))
-			print("ij",i,j)
 			grid[i][j].val=(0 if player_x==false else 1)
 			player_x = (false if player_x==true else true)
 			checkWinner()
@@ -78,3 +75,7 @@ func checkrow():
 		elif sum==size:
 			won="x"
 	return won
+
+
+func _on_BackButton_pressed():
+	get_tree().change_scene("res://Main.tscn")
