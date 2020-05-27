@@ -18,7 +18,6 @@ func _ready():
 	soundBtn.pressed=!mute
 	if !mute:
 		audioplayer.play()
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
